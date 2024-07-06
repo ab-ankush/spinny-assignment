@@ -139,3 +139,8 @@ class DeleteBoxView(APIView):
             return Response('Box does not exist.', status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response(str(e), status=status.HTTP_400_BAD_REQUEST)
+
+
+class PageNotFound(APIView):
+    def get(self, request):
+        return Response("Page not found", status=status.HTTP_404_NOT_FOUND)
